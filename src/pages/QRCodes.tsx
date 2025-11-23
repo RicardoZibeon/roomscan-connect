@@ -3,10 +3,11 @@ import { Button } from "@/components/ui/button";
 import { Download, Printer } from "lucide-react";
 
 const QRCodes = () => {
+  // IMPORTANT: Update these access codes to match the ones in src/pages/Room.tsx
   const rooms = [
-    { id: "805", url: window.location.origin + "/room/805" },
-    { id: "810", url: window.location.origin + "/room/810" },
-    { id: "815", url: window.location.origin + "/room/815" }
+    { id: "805", url: window.location.origin + "/room/805?code=HOTEL805VIP" },
+    { id: "810", url: window.location.origin + "/room/810?code=HOTEL810VIP" },
+    { id: "815", url: window.location.origin + "/room/815?code=HOTEL815VIP" }
   ];
 
   const handlePrint = () => {
@@ -64,13 +65,32 @@ const QRCodes = () => {
 
         {/* Instructions */}
         <Card className="p-6 bg-secondary no-print">
-          <h3 className="font-semibold text-foreground mb-3">How to Use</h3>
-          <ol className="space-y-2 text-muted-foreground text-sm list-decimal list-inside">
-            <li>Print these QR codes or download them individually</li>
-            <li>Place each QR code in the corresponding room in a visible location</li>
-            <li>Guests can scan the QR code with their phone camera to access room information</li>
-            <li>Update room information in the <code className="bg-background px-2 py-1 rounded">src/pages/Room.tsx</code> file</li>
-          </ol>
+          <h3 className="font-semibold text-foreground mb-3">🔒 Security Notice</h3>
+          <div className="space-y-4 text-sm">
+            <div className="bg-accent/10 border border-accent/20 rounded p-3">
+              <p className="text-foreground font-semibold mb-2">🔐 Access Codes Protected</p>
+              <p className="text-muted-foreground">
+                Each QR code contains a unique access code. Room information is only visible when scanned with the correct QR code. Direct URL access without the code will be denied.
+              </p>
+            </div>
+            
+            <div>
+              <h4 className="font-semibold text-foreground mb-2">How to Use:</h4>
+              <ol className="space-y-2 text-muted-foreground list-decimal list-inside">
+                <li>Print these QR codes or download them individually</li>
+                <li>Place each QR code in the corresponding room in a visible location</li>
+                <li>Guests scan the QR code to access their room's information securely</li>
+                <li>To change access codes, update both files: <code className="bg-background px-1.5 py-0.5 rounded text-xs">src/pages/Room.tsx</code> and <code className="bg-background px-1.5 py-0.5 rounded text-xs">src/pages/QRCodes.tsx</code></li>
+              </ol>
+            </div>
+
+            <div className="bg-destructive/10 border border-destructive/20 rounded p-3">
+              <p className="text-destructive font-semibold mb-1">⚠️ Important</p>
+              <p className="text-muted-foreground">
+                Keep these QR codes private. Anyone with access to these codes can view the room information. Regenerate codes if compromised.
+              </p>
+            </div>
+          </div>
         </Card>
       </div>
 
