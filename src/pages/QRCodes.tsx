@@ -1,8 +1,12 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Download, Printer } from "lucide-react";
+import { QRCodeSVG } from "qrcode.react";
+import { useRef } from "react";
 
 const QRCodes = () => {
+  const qrRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
+
   // IMPORTANT: Update these access codes to match the ones in src/pages/Room.tsx
   const rooms = [
     { id: "805", url: window.location.origin + "/room/805?code=HOTEL805VIP" },
@@ -12,6 +16,38 @@ const QRCodes = () => {
 
   const handlePrint = () => {
     window.print();
+  };
+
+  const handleDownload = (roomId: string) => {
+    const qrDiv = qrRefs.current[roomId];
+    if (!qrDiv) return;
+
+    const svg = qrDiv.querySelector('svg');
+    if (!svg) return;
+
+    const svgData = new XMLSerializer().serializeToString(svg);
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    const img = new Image();
+
+    canvas.width = 1024;
+    canvas.height = 1024;
+
+    img.onload = () => {
+      ctx?.drawImage(img, 0, 0, 1024, 1024);
+      canvas.toBlob((blob) => {
+        if (blob) {
+          const url = URL.createObjectURL(blob);
+          const link = document.createElement('a');
+          link.href = url;
+          link.download = `room-${roomId}-qr.png`;
+          link.click();
+          URL.revokeObjectURL(url);
+        }
+      });
+    };
+
+    img.src = 'data:image/svg+xml;base64,' + btoa(unescape(encodeURIComponent(svgData)));
   };
 
   return (
@@ -40,11 +76,15 @@ const QRCodes = () => {
                 <p className="text-sm text-muted-foreground">Scan for room information</p>
               </div>
               
-              <div className="flex justify-center">
-                <img 
-                  src={`/qr-${room.id}.png`} 
-                  alt={`QR Code for Room ${room.id}`}
-                  className="w-64 h-64 object-contain"
+              <div 
+                className="flex justify-center bg-white p-4 rounded-lg"
+                ref={(el) => qrRefs.current[room.id] = el}
+              >
+                <QRCodeSVG 
+                  value={room.url}
+                  size={256}
+                  level="H"
+                  includeMargin={true}
                 />
               </div>
 
@@ -52,11 +92,13 @@ const QRCodes = () => {
                 <p className="text-xs text-muted-foreground break-all">
                   {room.url}
                 </p>
-                <Button variant="outline" size="sm" asChild>
-                  <a href={`/qr-${room.id}.png`} download={`room-${room.id}-qr.png`}>
-                    <Download className="w-4 h-4 mr-2" />
-                    Download PNG
-                  </a>
+                <Button 
+                  variant="outline" 
+                  size="sm" 
+                  onClick={() => handleDownload(room.id)}
+                >
+                  <Download className="w-4 h-4 mr-2" />
+                  Download PNG
                 </Button>
               </div>
             </Card>
