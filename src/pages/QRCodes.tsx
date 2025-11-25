@@ -9,7 +9,7 @@ const QRCodes = () => {
 
   // IMPORTANT: Update YOUR_PUBLISHED_URL to your live site URL (e.g., https://yoursite.lovable.app)
   // Get this from the Publish dialog - this ensures QR codes work without login
-  const BASE_URL = "YOUR_PUBLISHED_URL"; // ⚠️ UPDATE THIS!
+  const BASE_URL = "https://qr-hotel-info.lovable.app";
   
   // IMPORTANT: Update these access codes to match the ones in src/pages/Room.tsx
   const rooms = [
