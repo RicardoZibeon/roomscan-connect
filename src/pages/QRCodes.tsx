@@ -7,11 +7,15 @@ import { useRef } from "react";
 const QRCodes = () => {
   const qrRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
+  // IMPORTANT: Update YOUR_PUBLISHED_URL to your live site URL (e.g., https://yoursite.lovable.app)
+  // Get this from the Publish dialog - this ensures QR codes work without login
+  const BASE_URL = "YOUR_PUBLISHED_URL"; // ⚠️ UPDATE THIS!
+  
   // IMPORTANT: Update these access codes to match the ones in src/pages/Room.tsx
   const rooms = [
-    { id: "805", url: window.location.origin + "/room/805?code=HOTEL805VIP" },
-    { id: "810", url: window.location.origin + "/room/810?code=HOTEL810VIP" },
-    { id: "815", url: window.location.origin + "/room/815?code=HOTEL815VIP" }
+    { id: "805", url: BASE_URL + "/room/805?code=HOTEL805VIP" },
+    { id: "810", url: BASE_URL + "/room/810?code=HOTEL810VIP" },
+    { id: "815", url: BASE_URL + "/room/815?code=HOTEL815VIP" }
   ];
 
   const handlePrint = () => {
@@ -72,7 +76,6 @@ const QRCodes = () => {
           {rooms.map((room) => (
             <Card key={room.id} className="p-8 text-center space-y-6 print:break-inside-avoid">
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold text-primary">Room {room.id}</h2>
                 <p className="text-sm text-muted-foreground">Scan for room information</p>
               </div>
               
@@ -86,6 +89,10 @@ const QRCodes = () => {
                   level="H"
                   includeMargin={true}
                 />
+              </div>
+              
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold text-primary">Room {room.id}</h2>
               </div>
 
               <div className="space-y-2 no-print">
