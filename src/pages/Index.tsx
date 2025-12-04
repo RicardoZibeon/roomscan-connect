@@ -3,7 +3,11 @@ import { Card } from "@/components/ui/card";
 import { Building2 } from "lucide-react";
 
 const Index = () => {
-  const rooms = ["805", "405", "815"];
+  const rooms = [
+    { id: "805", name: "805", description: "1 Bedroom Apartment" },
+    { id: "405", name: "405", description: "2 Bedroom Apartment" },
+    { id: "815", name: "4BR House", description: "4 Bedroom House" }
+  ];
 
   return (
     <div className="min-h-screen bg-background p-4 md:p-8">
@@ -24,11 +28,11 @@ const Index = () => {
         {/* Rooms Grid */}
         <div className="grid md:grid-cols-3 gap-6 pt-8">
           {rooms.map((room) => (
-            <Link key={room} to={`/room/${room}`}>
+            <Link key={room.id} to={`/room/${room.id}`}>
               <Card className="p-8 text-center hover:shadow-lg transition-all hover:scale-105 cursor-pointer border-2 hover:border-primary">
                 <div className="space-y-3">
-                  <div className="text-5xl font-bold text-primary">{room}</div>
-                  <p className="text-muted-foreground">Room {room}</p>
+                  <div className="text-5xl font-bold text-primary">{room.name}</div>
+                  <p className="text-muted-foreground">{room.description}</p>
                   <p className="text-sm text-accent">View Details →</p>
                 </div>
               </Card>
