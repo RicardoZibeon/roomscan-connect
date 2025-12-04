@@ -29,8 +29,8 @@ const roomsData = {
       "1.7km from Mouille Point beach",
       "5min walk to Cpt Stadium"
     ],
-    whatsappNumber: "1234567890", // Replace with actual number (format: country code + number, no + or spaces)
-    receptionPhone: "+1 (234) 567-8900" // Replace with actual number
+    whatsappNumber: "+27 83 282 3691", // Replace with actual number (format: country code + number, no + or spaces)
+    receptionPhone: "+27 83 282 3691" // Replace with actual number
   },
   "405": {
     roomNumber: "405",
@@ -55,8 +55,8 @@ const roomsData = {
       "1.7km from Mouille Point beach",
       "5min walk to Cpt Stadium"
     ],
-    whatsappNumber: "1234567890", // Replace with actual number
-    receptionPhone: "+1 (234) 567-8900" // Replace with actual number
+    whatsappNumber: "+27 83 282 3691", // Replace with actual number
+    receptionPhone: "+27 83 282 3691" // Replace with actual number
   },
   "815": {
     roomNumber: "815",
@@ -73,8 +73,8 @@ const roomsData = {
       "Coffee Corner Café - 2 minutes walk",
       "Pharmacy - 5 minutes walk"
     ],
-    whatsappNumber: "1234567890", // Replace with actual number
-    receptionPhone: "+1 (234) 567-8900" // Replace with actual number
+    whatsappNumber: "+27 83 282 3691", // Replace with actual number
+    receptionPhone: "+27 83 282 3691" // Replace with actual number
   }
 };
 
