@@ -13,9 +13,9 @@ const QRCodes = () => {
   
   // IMPORTANT: Update these access codes to match the ones in src/pages/Room.tsx
   const rooms = [
-    { id: "805", url: BASE_URL + "/room/805?code=HOTEL805VIP" },
-    { id: "405", url: BASE_URL + "/room/405?code=HOTEL405VIP" },
-    { id: "815", url: BASE_URL + "/room/815?code=HOTEL815VIP" }
+    { id: "805", name: "805", description: "1 Bedroom Apartment", url: BASE_URL + "/room/805?code=HOTEL805VIP" },
+    { id: "405", name: "405", description: "2 Bedroom Apartment", url: BASE_URL + "/room/405?code=HOTEL405VIP" },
+    { id: "815", name: "4BR House", description: "4 Bedroom House", url: BASE_URL + "/room/815?code=HOTEL815VIP" }
   ];
 
   const handlePrint = () => {
@@ -92,7 +92,8 @@ const QRCodes = () => {
               </div>
               
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold text-primary">Room {room.id}</h2>
+                <h2 className={`font-bold text-primary ${room.id === "815" ? "text-2xl" : "text-3xl"}`}>{room.name}</h2>
+                <p className="text-muted-foreground">{room.description}</p>
               </div>
 
               <div className="space-y-2 no-print">
