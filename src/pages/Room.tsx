@@ -15,11 +15,11 @@ const roomsData = {
     checkIn: "2:00 PM",
     checkOut: "11:00 AM",
     nearbyPlaces: [
-      "Central Mall - 5 minutes walk",
-      "City Museum - 10 minutes walk",
-      "Waterfront Restaurant - 3 minutes walk",
-      "Coffee Corner Café - 2 minutes walk",
-      "Pharmacy - 5 minutes walk"
+      "Restaurants: Giovanni's, Shift Espresso Bar, Hudson's, 91",
+      "Groceries: Woolworths, Spar",
+      "V&A Waterfront - 10 min walk",
+      "1.7km from Mouille Point Beach",
+      "5 min walk to Cape Town Stadium"
     ],
     whatsappNumber: "1234567890", // Replace with actual number (format: country code + number, no + or spaces)
     receptionPhone: "+1 (234) 567-8900" // Replace with actual number
@@ -33,11 +33,11 @@ const roomsData = {
     checkIn: "2:00 PM",
     checkOut: "11:00 AM",
     nearbyPlaces: [
-      "Central Mall - 5 minutes walk",
-      "City Museum - 10 minutes walk",
-      "Waterfront Restaurant - 3 minutes walk",
-      "Coffee Corner Café - 2 minutes walk",
-      "Pharmacy - 5 minutes walk"
+      "Restaurants: Giovanni's, Shift Espresso Bar, Hudson's, 91",
+      "Groceries: Woolworths, Spar",
+      "V&A Waterfront - 10 min walk",
+      "1.7km from Mouille Point Beach",
+      "5 min walk to Cape Town Stadium"
     ],
     whatsappNumber: "1234567890", // Replace with actual number
     receptionPhone: "+1 (234) 567-8900" // Replace with actual number
