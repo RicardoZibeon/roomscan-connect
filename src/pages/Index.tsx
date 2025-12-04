@@ -3,7 +3,7 @@ import { Card } from "@/components/ui/card";
 import { Building2 } from "lucide-react";
 
 const Index = () => {
-  const rooms = ["805", "810", "815"];
+  const rooms = ["805", "405", "815"];
 
   return (
     <div className="min-h-screen bg-background p-4 md:p-8">
