@@ -77,12 +77,22 @@ const RoomInfo = ({ roomData }: { roomData: RoomData }) => {
             <div className="flex-1">
               <h3 className="font-semibold text-foreground mb-3">Nearby Shops & Attractions</h3>
               <ul className="space-y-2">
-                {roomData.nearbyPlaces.map((place, index) => (
-                  <li key={index} className="text-muted-foreground flex items-center gap-2">
-                    <MapPin className="w-4 h-4 text-accent flex-shrink-0" />
-                    {place}
-                  </li>
-                ))}
+                {roomData.nearbyPlaces.map((place, index) => {
+                  if (place === "") return <li key={index} className="h-2" />;
+                  if (place.endsWith(":")) {
+                    return (
+                      <li key={index} className="text-foreground font-semibold pt-2 first:pt-0">
+                        {place}
+                      </li>
+                    );
+                  }
+                  return (
+                    <li key={index} className="text-muted-foreground flex items-center gap-2 pl-2">
+                      <MapPin className="w-4 h-4 text-accent flex-shrink-0" />
+                      {place}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           </div>
