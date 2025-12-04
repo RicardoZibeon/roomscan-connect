@@ -15,7 +15,10 @@ const roomsData = {
     checkIn: "2:00 PM",
     checkOut: "11:00 AM",
     nearbyPlaces: [
-      "Restaurants: Giovanni's, Shift Espresso Bar, Hudson's, 91",
+      "Giovanni's",
+      "Shift Espresso Bar",
+      "Hudson's",
+      "91",
       "Groceries: Woolworths, Spar",
       "V&A Waterfront - 10 min walk",
       "1.7km from Mouille Point Beach",
@@ -33,7 +36,10 @@ const roomsData = {
     checkIn: "2:00 PM",
     checkOut: "11:00 AM",
     nearbyPlaces: [
-      "Restaurants: Giovanni's, Shift Espresso Bar, Hudson's, 91",
+      "Giovanni's",
+      "Shift Espresso Bar",
+      "Hudson's",
+      "91",
       "Groceries: Woolworths, Spar",
       "V&A Waterfront - 10 min walk",
       "1.7km from Mouille Point Beach",
