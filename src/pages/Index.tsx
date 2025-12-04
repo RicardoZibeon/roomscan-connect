@@ -31,7 +31,7 @@ const Index = () => {
             <Link key={room.id} to={`/room/${room.id}`}>
               <Card className="p-8 text-center hover:shadow-lg transition-all hover:scale-105 cursor-pointer border-2 hover:border-primary">
                 <div className="space-y-3">
-                  <div className="text-5xl font-bold text-primary">{room.name}</div>
+                  <div className={`font-bold text-primary ${room.id === "815" ? "text-3xl" : "text-5xl"}`}>{room.name}</div>
                   <p className="text-muted-foreground">{room.description}</p>
                   <p className="text-sm text-accent">View Details →</p>
                 </div>
