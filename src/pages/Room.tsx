@@ -24,12 +24,12 @@ const roomsData = {
     whatsappNumber: "1234567890", // Replace with actual number (format: country code + number, no + or spaces)
     receptionPhone: "+1 (234) 567-8900" // Replace with actual number
   },
-  "810": {
-    roomNumber: "810",
-    accessCode: "HOTEL810VIP",  // Change this to your own secret code
+  "405": {
+    roomNumber: "405",
+    accessCode: "HOTEL405VIP",  // Change this to your own secret code
     keyLocation: "Reception desk on the ground floor, available 24/7",
     parkingBay: "Bay 15, Level 2 (marked with room number)",
-    wifiPassword: "Hotel810Wifi",
+    wifiPassword: "Hotel405Wifi",
     checkIn: "2:00 PM",
     checkOut: "11:00 AM",
     nearbyPlaces: [

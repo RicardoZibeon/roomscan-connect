@@ -14,7 +14,7 @@ const QRCodes = () => {
   // IMPORTANT: Update these access codes to match the ones in src/pages/Room.tsx
   const rooms = [
     { id: "805", url: BASE_URL + "/room/805?code=HOTEL805VIP" },
-    { id: "810", url: BASE_URL + "/room/810?code=HOTEL810VIP" },
+    { id: "405", url: BASE_URL + "/room/405?code=HOTEL405VIP" },
     { id: "815", url: BASE_URL + "/room/815?code=HOTEL815VIP" }
   ];
 
