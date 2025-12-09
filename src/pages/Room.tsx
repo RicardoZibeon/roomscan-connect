@@ -1,5 +1,6 @@
 import { useParams, Navigate, useSearchParams } from "react-router-dom";
 import RoomInfo from "@/components/RoomInfo";
+import HouseInfo from "@/components/HouseInfo";
 import { Card } from "@/components/ui/card";
 import { ShieldAlert, QrCode } from "lucide-react";
 
@@ -8,7 +9,7 @@ import { ShieldAlert, QrCode } from "lucide-react";
 const roomsData = {
   "805": {
     roomNumber: "805",
-    accessCode: "HOTEL805VIP",  // Change this to your own secret code
+    accessCode: "HOTEL805VIP",
     keyLocation: "Reception desk on the ground floor, available 24/7",
     parkingBay: "Bay 12, Level 2 (marked with room number)",
     wifiPassword: "Hotel805Wifi",
@@ -29,12 +30,12 @@ const roomsData = {
       "1.7km from Mouille Point beach",
       "5min walk to Cpt Stadium"
     ],
-    whatsappNumber: "+27 83 282 3691", // Replace with actual number (format: country code + number, no + or spaces)
-    receptionPhone: "+27 83 282 3691" // Replace with actual number
+    whatsappNumber: "+27 83 282 3691",
+    receptionPhone: "+27 83 282 3691"
   },
   "405": {
     roomNumber: "405",
-    accessCode: "HOTEL405VIP",  // Change this to your own secret code
+    accessCode: "HOTEL405VIP",
     keyLocation: "Reception desk on the ground floor, available 24/7",
     parkingBay: "Bay 15, Level 2 (marked with room number)",
     wifiPassword: "Hotel405Wifi",
@@ -55,26 +56,15 @@ const roomsData = {
       "1.7km from Mouille Point beach",
       "5min walk to Cpt Stadium"
     ],
-    whatsappNumber: "+27 83 282 3691", // Replace with actual number
-    receptionPhone: "+27 83 282 3691" // Replace with actual number
+    whatsappNumber: "+27 83 282 3691",
+    receptionPhone: "+27 83 282 3691"
   },
   "815": {
     roomNumber: "815",
-    accessCode: "HOTEL815VIP",  // Change this to your own secret code
-    keyLocation: "Reception desk on the ground floor, available 24/7",
-    parkingBay: "Bay 18, Level 2 (marked with room number)",
-    wifiPassword: "Hotel815Wifi",
-    checkIn: "2:00 PM",
-    checkOut: "11:00 AM",
-    nearbyPlaces: [
-      "Central Mall - 5 minutes walk",
-      "City Museum - 10 minutes walk",
-      "Waterfront Restaurant - 3 minutes walk",
-      "Coffee Corner Café - 2 minutes walk",
-      "Pharmacy - 5 minutes walk"
-    ],
-    whatsappNumber: "+27 83 282 3691", // Replace with actual number
-    receptionPhone: "+27 83 282 3691" // Replace with actual number
+    accessCode: "HOTEL815VIP",
+    isHouse: true,
+    whatsappNumber: "+27 83 282 3691",
+    receptionPhone: "+27 83 282 3691"
   }
 };
 
@@ -130,7 +120,12 @@ const Room = () => {
     );
   }
 
-  return <RoomInfo roomData={roomData} />;
+  // Render HouseInfo for the 4BR House, RoomInfo for apartments
+  if ('isHouse' in roomData && roomData.isHouse) {
+    return <HouseInfo houseData={roomData} />;
+  }
+
+  return <RoomInfo roomData={roomData as any} />;
 };
 
 export default Room;
