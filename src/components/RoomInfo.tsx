@@ -108,16 +108,6 @@ const RoomInfo = ({ roomData }: { roomData: RoomData }) => {
             <MessageCircle className="w-5 h-5 mr-2" />
             Chat with us on WhatsApp
           </Button>
-
-          <Button 
-            onClick={handleCall}
-            variant="outline"
-            className="w-full"
-            size="lg"
-          >
-            <Phone className="w-5 h-5 mr-2" />
-            Call Reception: {roomData.receptionPhone}
-          </Button>
         </div>
 
         {/* Footer */}
