@@ -119,7 +119,7 @@ const Apartment405Info = ({ apartmentData }: { apartmentData: ApartmentData }) =
               <h3 className="font-semibold text-foreground mb-3">Additional Notes</h3>
               <ul className="space-y-2 text-muted-foreground">
                 <li>• You can switch on the AC at the DB board.</li>
-                <li>• The apartment is privately owned. For any questions or assistance, please contact me directly, Nicole, at +27 83 282 3691.</li>
+                <li>• This apartment is privately owned. If you need anything, feel free to contact me.</li>
               </ul>
             </div>
           </div>
