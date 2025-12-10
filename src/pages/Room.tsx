@@ -1,6 +1,7 @@
 import { useParams, Navigate, useSearchParams } from "react-router-dom";
 import RoomInfo from "@/components/RoomInfo";
 import HouseInfo from "@/components/HouseInfo";
+import ApartmentInfo from "@/components/ApartmentInfo";
 import { Card } from "@/components/ui/card";
 import { ShieldAlert, QrCode } from "lucide-react";
 
@@ -10,26 +11,7 @@ const roomsData = {
   "805": {
     roomNumber: "805",
     accessCode: "HOTEL805VIP",
-    keyLocation: "Reception desk on the ground floor, available 24/7",
-    parkingBay: "Bay 12, Level 2 (marked with room number)",
-    wifiPassword: "Hotel805Wifi",
-    checkIn: "2:00 PM",
-    checkOut: "11:00 AM",
-    nearbyPlaces: [
-      "Restaurants:",
-      "Giovanni's",
-      "Shift Espresso Bar",
-      "Hudson's",
-      "91",
-      "",
-      "Groceries:",
-      "Woolworths",
-      "Spar",
-      "V&A Waterfront 10min walk",
-      "",
-      "1.7km from Mouille Point beach",
-      "5min walk to Cpt Stadium"
-    ],
+    isApartment: true,
     whatsappNumber: "+27 83 282 3691",
     receptionPhone: "+27 83 282 3691"
   },
@@ -120,9 +102,13 @@ const Room = () => {
     );
   }
 
-  // Render HouseInfo for the 4BR House, RoomInfo for apartments
+  // Render appropriate component based on property type
   if ('isHouse' in roomData && roomData.isHouse) {
     return <HouseInfo houseData={roomData} />;
+  }
+
+  if ('isApartment' in roomData && roomData.isApartment) {
+    return <ApartmentInfo apartmentData={roomData} />;
   }
 
   return <RoomInfo roomData={roomData as any} />;
