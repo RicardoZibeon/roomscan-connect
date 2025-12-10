@@ -2,6 +2,7 @@ import { useParams, Navigate, useSearchParams } from "react-router-dom";
 import RoomInfo from "@/components/RoomInfo";
 import HouseInfo from "@/components/HouseInfo";
 import ApartmentInfo from "@/components/ApartmentInfo";
+import Apartment405Info from "@/components/Apartment405Info";
 import { Card } from "@/components/ui/card";
 import { ShieldAlert, QrCode } from "lucide-react";
 
@@ -11,33 +12,14 @@ const roomsData = {
   "805": {
     roomNumber: "805",
     accessCode: "HOTEL805VIP",
-    isApartment: true,
+    isApartment805: true,
     whatsappNumber: "+27 83 282 3691",
     receptionPhone: "+27 83 282 3691"
   },
   "405": {
     roomNumber: "405",
     accessCode: "HOTEL405VIP",
-    keyLocation: "Reception desk on the ground floor, available 24/7",
-    parkingBay: "Bay 15, Level 2 (marked with room number)",
-    wifiPassword: "Hotel405Wifi",
-    checkIn: "2:00 PM",
-    checkOut: "11:00 AM",
-    nearbyPlaces: [
-      "Restaurants:",
-      "Giovanni's",
-      "Shift Espresso Bar",
-      "Hudson's",
-      "91",
-      "",
-      "Groceries:",
-      "Woolworths",
-      "Spar",
-      "V&A Waterfront 10min walk",
-      "",
-      "1.7km from Mouille Point beach",
-      "5min walk to Cpt Stadium"
-    ],
+    isApartment405: true,
     whatsappNumber: "+27 83 282 3691",
     receptionPhone: "+27 83 282 3691"
   },
@@ -107,8 +89,12 @@ const Room = () => {
     return <HouseInfo houseData={roomData} />;
   }
 
-  if ('isApartment' in roomData && roomData.isApartment) {
+  if ('isApartment805' in roomData && roomData.isApartment805) {
     return <ApartmentInfo apartmentData={roomData} />;
+  }
+
+  if ('isApartment405' in roomData && roomData.isApartment405) {
+    return <Apartment405Info apartmentData={roomData} />;
   }
 
   return <RoomInfo roomData={roomData as any} />;
