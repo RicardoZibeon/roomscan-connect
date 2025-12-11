@@ -63,7 +63,7 @@ const Apartment405Info = ({ apartmentData }: { apartmentData: ApartmentData }) =
             <Car className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
             <div>
               <h3 className="font-semibold text-foreground mb-2">Parking Bay</h3>
-              <p className="text-foreground font-mono bg-secondary px-3 py-1.5 rounded inline-block">10</p>
+              <p className="text-foreground font-mono bg-secondary px-3 py-1.5 rounded inline-block">10 & 11</p>
             </div>
           </div>
         </Card>
