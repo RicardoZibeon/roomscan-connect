@@ -20,7 +20,7 @@ const Apartment405Info = ({ apartmentData }: { apartmentData: ApartmentData }) =
         className="fixed inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${apartmentBg})` }}
       />
-      <div className="fixed inset-0 bg-background/70 backdrop-blur-sm" />
+      <div className="fixed inset-0 bg-background/50 backdrop-blur-[2px]" />
       
       {/* Content */}
       <div className="relative p-4 md:p-8">
