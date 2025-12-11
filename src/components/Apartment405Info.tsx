@@ -1,7 +1,13 @@
+import { useState, useEffect } from "react";
 import { Wifi, Clock, MessageCircle, Building2, Zap, Info, Bath, Car } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import apartmentBg from "@/assets/apartment-405-bg.jpeg";
+import apartmentBg1 from "@/assets/apartment-405-bg.jpeg";
+import apartmentBg2 from "@/assets/apartment-405-bg-2.jpeg";
+import apartmentBg3 from "@/assets/apartment-405-bg-3.jpeg";
+import apartmentBg4 from "@/assets/apartment-405-bg-4.jpeg";
+
+const backgroundImages = [apartmentBg1, apartmentBg2, apartmentBg3, apartmentBg4];
 
 interface ApartmentData {
   roomNumber: string;
@@ -9,17 +15,32 @@ interface ApartmentData {
 }
 
 const Apartment405Info = ({ apartmentData }: { apartmentData: ApartmentData }) => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % backgroundImages.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
   const handleWhatsApp = () => {
     window.open(`https://wa.me/${apartmentData.whatsappNumber.replace(/\s/g, '')}`, '_blank');
   };
 
   return (
     <div className="min-h-screen relative">
-      {/* Background Image */}
-      <div 
-        className="fixed inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${apartmentBg})` }}
-      />
+      {/* Background Images with Crossfade */}
+      {backgroundImages.map((img, index) => (
+        <div
+          key={index}
+          className="fixed inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000"
+          style={{
+            backgroundImage: `url(${img})`,
+            opacity: index === currentImageIndex ? 1 : 0,
+          }}
+        />
+      ))}
       <div className="fixed inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50" />
       
       {/* Content */}
