@@ -36,7 +36,7 @@ const Apartment405Info = ({ apartmentData }: { apartmentData: ApartmentData }) =
         </div>
 
         {/* Check-in/out */}
-        <Card className="p-6">
+        <Card className="p-6 bg-card/95 backdrop-blur-sm">
           <div className="flex items-start gap-3">
             <Clock className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
             <div>
@@ -48,7 +48,7 @@ const Apartment405Info = ({ apartmentData }: { apartmentData: ApartmentData }) =
         </Card>
 
         {/* Building Info */}
-        <Card className="p-6">
+        <Card className="p-6 bg-card/95 backdrop-blur-sm">
           <div className="flex items-start gap-3">
             <Building2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
             <div className="flex-1">
@@ -68,7 +68,7 @@ const Apartment405Info = ({ apartmentData }: { apartmentData: ApartmentData }) =
         </Card>
 
         {/* Parking */}
-        <Card className="p-6">
+        <Card className="p-6 bg-card/95 backdrop-blur-sm">
           <div className="flex items-start gap-3">
             <Car className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
             <div>
@@ -79,7 +79,7 @@ const Apartment405Info = ({ apartmentData }: { apartmentData: ApartmentData }) =
         </Card>
 
         {/* WiFi */}
-        <Card className="p-6">
+        <Card className="p-6 bg-card/95 backdrop-blur-sm">
           <div className="flex items-start gap-3">
             <Wifi className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
             <div>
@@ -91,7 +91,7 @@ const Apartment405Info = ({ apartmentData }: { apartmentData: ApartmentData }) =
         </Card>
 
         {/* Extras */}
-        <Card className="p-6">
+        <Card className="p-6 bg-card/95 backdrop-blur-sm">
           <div className="flex items-start gap-3">
             <Bath className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
             <div className="flex-1">
@@ -108,7 +108,7 @@ const Apartment405Info = ({ apartmentData }: { apartmentData: ApartmentData }) =
         </Card>
 
         {/* Loadshedding Info */}
-        <Card className="p-6">
+        <Card className="p-6 bg-card/95 backdrop-blur-sm">
           <div className="flex items-start gap-3">
             <Zap className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
             <div className="flex-1">
@@ -122,7 +122,7 @@ const Apartment405Info = ({ apartmentData }: { apartmentData: ApartmentData }) =
         </Card>
 
         {/* Additional Notes */}
-        <Card className="p-6">
+        <Card className="p-6 bg-card/95 backdrop-blur-sm">
           <div className="flex items-start gap-3">
             <Info className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
             <div className="flex-1">
@@ -136,7 +136,7 @@ const Apartment405Info = ({ apartmentData }: { apartmentData: ApartmentData }) =
         </Card>
 
         {/* Footer Note */}
-        <Card className="p-6 bg-secondary/50">
+        <Card className="p-6 bg-card/95 backdrop-blur-sm">
           <p className="text-muted-foreground text-center">
             <span className="font-medium text-foreground">Wishing you a wonderful stay!</span>
           </p>
