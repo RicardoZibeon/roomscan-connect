@@ -1,6 +1,7 @@
 import { Wifi, Clock, MessageCircle, Building2, Zap, Info, Bath, Car } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import apartmentBg from "@/assets/apartment-405-bg.jpeg";
 
 interface ApartmentData {
   roomNumber: string;
@@ -13,7 +14,16 @@ const Apartment405Info = ({ apartmentData }: { apartmentData: ApartmentData }) =
   };
 
   return (
-    <div className="min-h-screen bg-background p-4 md:p-8">
+    <div className="min-h-screen relative">
+      {/* Background Image */}
+      <div 
+        className="fixed inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${apartmentBg})` }}
+      />
+      <div className="fixed inset-0 bg-background/85 backdrop-blur-sm" />
+      
+      {/* Content */}
+      <div className="relative p-4 md:p-8">
       <div className="max-w-2xl mx-auto space-y-6">
         {/* Header */}
         <div className="text-center space-y-2 pt-6">
@@ -148,6 +158,7 @@ const Apartment405Info = ({ apartmentData }: { apartmentData: ApartmentData }) =
         <div className="text-center text-sm text-muted-foreground pt-4 pb-8">
           Have a wonderful stay!
         </div>
+      </div>
       </div>
     </div>
   );
