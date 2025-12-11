@@ -1,7 +1,14 @@
+import { useState, useEffect } from "react";
 import { MapPin, Wifi, Clock, ShoppingBag, MessageCircle, KeyRound, Car, Home, Info, Trash2, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import houseBg from "@/assets/house-bg.jpeg";
+import houseBg1 from "@/assets/house-bg.jpeg";
+import houseBg2 from "@/assets/house-bg-2.jpeg";
+import houseBg3 from "@/assets/house-bg-3.jpeg";
+import houseBg4 from "@/assets/house-bg-4.jpeg";
+import houseBg5 from "@/assets/house-bg-5.jpeg";
+
+const backgroundImages = [houseBg1, houseBg2, houseBg3, houseBg4, houseBg5];
 
 interface HouseData {
   whatsappNumber: string;
@@ -9,6 +16,15 @@ interface HouseData {
 }
 
 const HouseInfo = ({ houseData }: { houseData: HouseData }) => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % backgroundImages.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
   const handleWhatsApp = () => {
     const cleanNumber = houseData.whatsappNumber.replace(/\s+/g, '').replace('+', '');
     window.open(`https://wa.me/${cleanNumber}`, '_blank');
@@ -16,11 +32,17 @@ const HouseInfo = ({ houseData }: { houseData: HouseData }) => {
 
   return (
     <div className="min-h-screen relative">
-      {/* Background Image */}
-      <div 
-        className="fixed inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${houseBg})` }}
-      />
+      {/* Background Images with Crossfade */}
+      {backgroundImages.map((img, index) => (
+        <div
+          key={index}
+          className="fixed inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000"
+          style={{
+            backgroundImage: `url(${img})`,
+            opacity: index === currentImageIndex ? 1 : 0,
+          }}
+        />
+      ))}
       <div className="fixed inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50" />
       
       {/* Content */}
