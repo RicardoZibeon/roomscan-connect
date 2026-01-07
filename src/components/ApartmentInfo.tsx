@@ -100,8 +100,8 @@ const ApartmentInfo = ({ apartmentData }: { apartmentData: ApartmentData }) => {
               <div className="flex-1">
                 <h3 className="font-bold text-slate-800 mb-3 text-lg">WiFi Details</h3>
                 <div className="space-y-2">
-                  <p className="text-slate-600">Network: <span className="font-mono bg-slate-100 px-3 py-1 rounded-md text-slate-800 font-semibold">HUAWEI_57D6</span></p>
-                  <p className="text-slate-600">Password: <span className="font-mono bg-slate-100 px-3 py-1 rounded-md text-slate-800 font-semibold">xwbvbue3</span></p>
+                  <p className="text-slate-600">Network: <span className="font-mono bg-slate-100 px-3 py-1 rounded-md text-slate-800 font-semibold">5G.101pro_high_VHND</span></p>
+                  <p className="text-slate-600">Password: <span className="font-mono bg-slate-100 px-3 py-1 rounded-md text-slate-800 font-semibold">YMJMDWZD</span></p>
                 </div>
               </div>
             </div>
