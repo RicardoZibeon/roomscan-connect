@@ -13,22 +13,22 @@ const roomsData = {
     roomNumber: "805",
     accessCode: "HOTEL805VIP",
     isApartment805: true,
-    whatsappNumber: "+27 83 282 3691",
-    receptionPhone: "+27 83 282 3691"
+    whatsappNumber: "+27 81 763 9844",
+    receptionPhone: "+27 81 763 9844"
   },
   "405": {
     roomNumber: "405",
     accessCode: "HOTEL405VIP",
     isApartment405: true,
-    whatsappNumber: "+27 83 282 3691",
-    receptionPhone: "+27 83 282 3691"
+    whatsappNumber: "+27 81 763 9844",
+    receptionPhone: "+27 81 763 9844"
   },
   "815": {
     roomNumber: "815",
     accessCode: "HOTEL815VIP",
     isHouse: true,
-    whatsappNumber: "+27 83 282 3691",
-    receptionPhone: "+27 83 282 3691"
+    whatsappNumber: "+27 81 763 9844",
+    receptionPhone: "+27 81 763 9844"
   }
 };
 
